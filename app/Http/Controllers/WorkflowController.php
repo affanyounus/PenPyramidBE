@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\WorkflowProject;
+use App\Models\Workflow;
 use Illuminate\Http\Request;
 
-class WorkflowProjectController extends Controller
+class WorkflowController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class WorkflowProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(WorkflowProject $workflowProject)
+    public function show(Workflow $workflowProject)
     {
         //
     }
@@ -42,7 +42,7 @@ class WorkflowProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(WorkflowProject $workflowProject)
+    public function edit(Workflow $workflowProject)
     {
         //
     }
@@ -50,7 +50,7 @@ class WorkflowProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, WorkflowProject $workflowProject)
+    public function update(Request $request, Workflow $workflowProject)
     {
         //
     }
@@ -58,7 +58,7 @@ class WorkflowProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(WorkflowProject $workflowProject)
+    public function destroy(Workflow $workflowProject)
     {
         //
     }

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name')->nullable(false);
             $table->text('description')->nullable(false);
             $table->timestamps();
+            $table->unsignedBigInteger('created_by')->nullable(false);
+            $table->unsignedBigInteger('updated_by')->nullable(false);
             $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')

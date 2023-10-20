@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('workflow_projects', function (Blueprint $table) {
-            $table->id();
+        Schema::create('workflows', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();
+            $table->unsignedBigInteger('created_by')->nullable(false);
+            $table->unsignedBigInteger('updated_by')->nullable(false);
+            $table->softDeletes();
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('workflow_projects');
+        Schema::dropIfExists('workflows');
     }
 };

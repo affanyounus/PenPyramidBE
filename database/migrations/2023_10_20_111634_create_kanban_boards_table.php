@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kanban_boards', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->timestamps();
+            $table->unsignedBigInteger('created_by')->nullable(false);
+            $table->unsignedBigInteger('updated_by')->nullable(false);
+            $table->softDeletes();
         });
     }
 

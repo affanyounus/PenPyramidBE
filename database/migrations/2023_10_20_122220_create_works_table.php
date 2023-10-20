@@ -14,15 +14,18 @@ return new class extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('workflow_project_id');
+            $table->unsignedBigInteger('workflow_id');
             $table->string('title');
             $table->timestamps();
             $table->softDeletes();
+            $table->unsignedBigInteger('created_by')->nullable(false);
+            $table->unsignedBigInteger('updated_by')->nullable(false);
+
 
             $table->foreign('project_id')->references('id')->on('projects')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
-            $table->foreign('workflow_project_id')->references('id')->on('projects')
+            $table->foreign('workflow_id')->references('id')->on('projects')
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
         });
@@ -34,7 +37,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('works', function(Blueprint $table){
-            $table->dropForeign(['project_id', 'workflow_project_id']);
+//            refered from mysql database
+            $table->dropForeign('works_project_id_foreign');
+            $table->dropForeign('works_workflow_id_foreign');
         });
         Schema::dropIfExists('works');
     }

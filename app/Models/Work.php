@@ -29,7 +29,7 @@ class Work extends Model
 
     public function workflow(): BelongsTo {
 
-        return $this->belongsTo(WorkflowProject::class);
+        return $this->belongsTo(Workflow::class);
     }
 
 
