@@ -3,32 +3,25 @@
 namespace App\Models;
 
 use App\Traits\CreatedUpdatedBy;
-use Illuminate\Console\View\Components\Task;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Project extends Model
+class Kanban extends Model
 {
     use HasFactory, SoftDeletes, CreatedUpdatedBy;
 
+
     protected $fillable = [
-        'title',
-        'description',
+        'project_id',
     ];
 
 
+    public function project(): BelongsTo{
 
-
-    public function works(): HasMany {
-
-        return $this->hasMany(Work::class);
-    }
-
-    public function kanban(): HasOne{
-        return $this->hasOne(Kanban::class);
+        return $this->belongsTo(Project::class);
     }
 
 }

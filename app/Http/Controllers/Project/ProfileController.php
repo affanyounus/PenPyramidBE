@@ -1,7 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Project;
 
+use App\Http\Controllers\Auth;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\JsonResponse;
+use App\Http\Controllers\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller

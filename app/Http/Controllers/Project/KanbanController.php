@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Project;
 
-use App\Models\Workflow;
+use App\Http\Controllers\Controller;
+use App\Models\Kanban;
 use Illuminate\Http\Request;
 
-class WorkflowController extends Controller
+class KanbanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class WorkflowController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Workflow $workflowProject)
+    public function show(Kanban $kanbanBoard)
     {
         //
     }
@@ -42,7 +43,7 @@ class WorkflowController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Workflow $workflowProject)
+    public function edit(Kanban $kanbanBoard)
     {
         //
     }
@@ -50,7 +51,7 @@ class WorkflowController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Workflow $workflowProject)
+    public function update(Request $request, Kanban $kanbanBoard)
     {
         //
     }
@@ -58,7 +59,7 @@ class WorkflowController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Workflow $workflowProject)
+    public function destroy(Kanban $kanbanBoard)
     {
         //
     }
