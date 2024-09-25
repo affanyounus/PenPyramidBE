@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->enum(['admin', 'user'], ['admin', 'user'])->default('user');
-            $table->enum(['microsoft', 'google', 'github', 'linkedin', 'personal'], ['microsoft', 'google', 'github', 'linkedin', 'personal'])->default('personal');
+            $table->enum('role', ['admin', 'user'])->default('user');
+            $table->enum('provider', ['microsoft', 'google', 'github', 'personal'])->default('personal');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
