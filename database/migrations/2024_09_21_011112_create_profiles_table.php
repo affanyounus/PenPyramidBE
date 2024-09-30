@@ -17,8 +17,10 @@ return new class extends Migration
             $table->string('first_name')->max(50);
             $table->string('last_name')->max(50);
             $table->date('date_of_birth');
+            $table->string('gender')->max(6);
             $table->string('country')->max(50);
             $table->string('city')->max(50);
+            $table->string('job_industry')->max(50)->nullable();
             $table->string('timezone')->max(50);
             $table->timestamps();
 
