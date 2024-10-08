@@ -19,3 +19,5 @@ yarn-error.log
 /.idea
 /.vscode
 cache
+/error.log
+/access.log

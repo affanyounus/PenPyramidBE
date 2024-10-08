@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\PatronControllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Store\StoreProjectRequest;
-use App\Http\Requests\Update\UpdateProjectRequest;
-use App\Models\Patron\Project;
+use App\Http\Requests\Store\StoreTimesheetRequest;
+use App\Http\Requests\Update\UpdateTimesheetRequest;
+use App\Models\Patron\Timesheet;
 
-class ProjectController extends Controller
+class TimesheetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProjectRequest $request)
+    public function store(StoreTimesheetRequest $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show(Timesheet $timesheet)
     {
         //
     }
@@ -44,7 +44,7 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(Timesheet $timesheet)
     {
         //
     }
@@ -52,7 +52,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, Project $project)
+    public function update(UpdateTimesheetRequest $request, Timesheet $timesheet)
     {
         //
     }
@@ -60,7 +60,7 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(Timesheet $timesheet)
     {
         //
     }
