@@ -2,7 +2,7 @@
 
 namespace App\Policies\Patron;
 
-use App\Models\Patron\Workspace;
+use App\Models\Patron\Desk;
 use App\Models\User;
 
 class WorkspacePolicy
@@ -18,7 +18,7 @@ class WorkspacePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Workspace $workspace): bool
+    public function view(User $user, Desk $workspace): bool
     {
         //
     }
@@ -34,7 +34,7 @@ class WorkspacePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Workspace $workspace): bool
+    public function update(User $user, Desk $workspace): bool
     {
         //
     }
@@ -42,7 +42,7 @@ class WorkspacePolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Workspace $workspace): bool
+    public function delete(User $user, Desk $workspace): bool
     {
         //
     }
@@ -50,7 +50,7 @@ class WorkspacePolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Workspace $workspace): bool
+    public function restore(User $user, Desk $workspace): bool
     {
         //
     }
@@ -58,7 +58,7 @@ class WorkspacePolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Workspace $workspace): bool
+    public function forceDelete(User $user, Desk $workspace): bool
     {
         //
     }

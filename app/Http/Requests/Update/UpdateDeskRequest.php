@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Store;
+namespace App\Http\Requests\Update;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreWorkspaceRequest extends FormRequest
+class UpdateDeskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

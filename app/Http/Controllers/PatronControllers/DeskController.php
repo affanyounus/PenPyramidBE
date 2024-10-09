@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\PatronControllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Store\StoreWorkspaceRequest;
-use App\Http\Requests\Update\UpdateWorkspaceRequest;
-use App\Models\Patron\Workspace;
+use App\Http\Requests\Store\StoreDeskRequest;
+use App\Http\Requests\Update\UpdateDeskRequest;
+use App\Models\Patron\Desk;
 
-class WorkspaceController extends Controller
+class DeskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class WorkspaceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreWorkspaceRequest $request)
+    public function store(StoreDeskRequest $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class WorkspaceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Workspace $workspace)
+    public function show(Desk $workspace)
     {
         //
     }
@@ -44,7 +44,7 @@ class WorkspaceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Workspace $workspace)
+    public function edit(Desk $workspace)
     {
         //
     }
@@ -52,7 +52,7 @@ class WorkspaceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateWorkspaceRequest $request, Workspace $workspace)
+    public function update(UpdateDeskRequest $request, Desk $workspace)
     {
         //
     }
@@ -60,7 +60,7 @@ class WorkspaceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Workspace $workspace)
+    public function destroy(Desk $workspace)
     {
         //
     }
