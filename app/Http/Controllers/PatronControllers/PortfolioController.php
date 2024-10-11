@@ -5,7 +5,9 @@ namespace App\Http\Controllers\PatronControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Store\StorePortfolioRequest;
 use App\Http\Requests\Update\UpdatePortfolioRequest;
+use App\Models\Patron\Organization;
 use App\Models\Patron\Portfolio;
+use Illuminate\Support\Facades\Auth;
 
 class PortfolioController extends Controller
 {
@@ -22,7 +24,6 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -30,7 +31,19 @@ class PortfolioController extends Controller
      */
     public function store(StorePortfolioRequest $request)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+        ]);
+
+        $organization = Organization::query()->where('org_handler_id', Auth::id())->first();
+
+        $portfolio = Portfolio::create([
+            'org_handler_id'=> Auth::id(),
+            'organization_id'=> $organization->id,
+            'title'=>$request->title,
+        ]);
+
+        return response()->json($portfolio, 201);
     }
 
     /**

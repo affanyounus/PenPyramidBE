@@ -10,6 +10,10 @@ class Portfolio extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+    ];
+
     public function projects(): EloquentRelations\HasMany{
         return $this->HasMany(Project::class);
     }

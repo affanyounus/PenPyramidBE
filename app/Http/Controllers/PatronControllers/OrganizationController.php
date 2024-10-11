@@ -30,7 +30,13 @@ class OrganizationController extends Controller
      */
     public function store(StoreOrganizationRequest $request)
     {
-        //
+        $request->validate([
+            ''
+        ]);
+
+       $organization = new Organization();
+
+
     }
 
     /**

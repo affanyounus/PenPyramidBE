@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Store;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 class StoreOrganizationRequest extends FormRequest
 {
@@ -22,7 +23,14 @@ class StoreOrganizationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'bail|required|unique:organizations|max:255',
+            'body' => 'required',
         ];
+    }
+
+    protected function prepareForValidation(): void{
+        $this->merge([
+           'slug'=>Str::slug($this->title),
+        ]);
     }
 }

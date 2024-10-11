@@ -9,6 +9,13 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'portfolio_id',
+        'title',
+        'slug',
+        'description',
+    ];
+
     public function portfolio(): EloquentRelations\BelongsTo{
         return $this->belongsTo(Portfolio::class);
     }
