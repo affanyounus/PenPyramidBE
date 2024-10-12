@@ -1,25 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\PatronControllers;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\patron\Profile;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class SampleAPIController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-         $profiles = Profile::all();
-
-        return response()->json(['data' => $profiles], 200);
+        //
     }
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -32,7 +25,7 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Profile $profile)
+    public function show(string $id)
     {
         //
     }
@@ -40,7 +33,7 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -48,7 +41,7 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Profile $profile)
+    public function destroy(string $id)
     {
         //
     }
