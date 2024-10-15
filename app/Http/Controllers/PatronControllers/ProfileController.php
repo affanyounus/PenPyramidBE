@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PatronControllers;
 use App\Http\Controllers\Controller;
 use App\Models\patron\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -15,7 +16,6 @@ class ProfileController extends Controller
     {
 
          $profiles = Profile::all();
-
         return response()->json(['data' => $profiles], 200);
     }
 
@@ -26,7 +26,10 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $password = Hash::make('password');
+
+        return response()->json($password, 200);
     }
 
     /**
