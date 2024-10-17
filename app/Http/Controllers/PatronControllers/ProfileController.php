@@ -6,17 +6,20 @@ use App\Http\Controllers\Controller;
 use App\Models\patron\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+use Essa\APIToolKit\Api\ApiResponse;
 class ProfileController extends Controller
 {
+    use ApiResponse;
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
 
-         $profiles = Profile::all();
-        return response()->json(['data' => $profiles], 200);
+         $profiles = Profile::dynamicPaginate();
+
+        return $this->responseSuccess('Profiles shown', $profiles);
     }
 
 

@@ -12,7 +12,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::apiResource('organizations', PC\OrganizationController::class);
 
-    Route::apiResource('profiles', PC\ProfileController::class);
+
 
 });
 
+Route::apiResource('profiles', PC\ProfileController::class);
