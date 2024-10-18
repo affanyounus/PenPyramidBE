@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('portfolios', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('org_handler_id')->after('id');
-            $table->unsignedBigInteger('organization_id')->after('org_handler_id');
+            $table->uuid('org_handler_id')->after('id');
+            $table->uuid('organization_id')->after('org_handler_id');
             $table->foreign('organization_id')->references('id')->on('organizations');
             $table->foreign('org_handler_id')->references('id')->on('users');
         });

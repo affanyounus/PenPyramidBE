@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -12,10 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('projectasks', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('portfolio_id');
-            $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('projectbaseline_id');
+            $table->uuid('id')->primary()->default(DB::raw('gen_random_uuid()'));
+            $table->uuid('portfolio_id');
+            $table->uuid('project_id');
+            $table->uuid('projectbaseline_id');
             $table->string('title');
             $table->string('slug');
             $table->text('description');
