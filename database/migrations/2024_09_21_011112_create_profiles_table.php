@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('user_id');
-            $table->string('first_name')->max(50);
-            $table->string('last_name')->max(50);
-            $table->date('date_of_birth');
-            $table->string('gender')->max(6);
-            $table->string('country')->max(50);
-            $table->string('city')->max(50);
+            $table->string('first_name')->max(50)->nullable();
+            $table->string('last_name')->max(50)->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('gender')->max(6)->nullable();
+            $table->string('country')->max(50)->nullable();
+            $table->string('city')->max(50)->nullable();
             $table->string('job_industry')->max(50)->nullable();
-            $table->string('timezone')->max(50);
+            $table->string('timezone')->max(50)->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

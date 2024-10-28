@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('organizations', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('org_handler_id'); //who created this organization
-            $table->string('name');
-            $table->string('address');
-            $table->string('country');
-            $table->string('office_phone');
-            $table->string('fax');
-            $table->string('website');
+            $table->string('name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('country')->nullable();
+            $table->string('office_phone')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
 
 

@@ -31,10 +31,11 @@ class RegisteredUserController extends Controller
 //        ]);
 
         $request->validate([
-            'role' => ['required', 'string', 'max:255'],
-            'provider' => ['required', 'string', 'max:255'],
+//            'role' => ['required', 'string', 'max:255'],
+//            'provider' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+//            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', Rules\Password::defaults()],
         ]);
 
         // Check if the validation fails
@@ -48,9 +49,12 @@ class RegisteredUserController extends Controller
 //        }
 
 
+        $role = 'user';
+        $provider = $request->provider ?? 'personal';
+
         $user = User::create([
-            'role' => $request->role,
-            'provider' => $request->provider,
+            'role' => $role,
+            'provider' => $provider,
             'email' => $request->email,
             'password' => Hash::make($request->string('password')),
         ]);

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('organization_id');
-            $table->string('name');
-            $table->string('slug');
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
 
             $table->foreign('organization_id')->references('id')->on('organizations');
