@@ -27,6 +27,8 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $appends = ['profileExists'];
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -52,5 +54,11 @@ class User extends Authenticatable
     public function profile(): Relations\HasOne {
 
         return $this->hasOne(Patron\Profile::class);
+    }
+
+    // Add an accessor for profileExists
+    public function getProfileExistsAttribute(): bool
+    {
+        return $this->profile()->exists();
     }
 }

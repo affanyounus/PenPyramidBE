@@ -41,15 +41,8 @@ class AuthenticatedSessionController extends Controller
 
     public function authenticate(Request $request): \Illuminate\Http\JsonResponse
     {
-
         $user = $request->user();
-
-        $userProfile = $user->profile;
-
-        return $this->responseSuccess('', [
-            'user' => $user
-        ]);
-
+        return $this->responseSuccess('', $user);
     }
 
 
