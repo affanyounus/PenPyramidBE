@@ -4,10 +4,9 @@ namespace App\Http\Controllers\PatronControllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Store\StorePortfolioRequest;
-use App\Models\patron\Profile;
+use App\Models\Patron\Profile;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Essa\APIToolKit\Api\ApiResponse;
 use Illuminate\Support\Facades\Storage;
 
