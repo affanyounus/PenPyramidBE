@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\PatronControllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Store\StorePortfolioRequest;
 use App\Models\patron\Profile;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Essa\APIToolKit\Api\ApiResponse;
+use Illuminate\Support\Facades\Storage;
+
 class ProfileController extends Controller
 {
     use ApiResponse;
@@ -27,13 +31,27 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePortfolioRequest $request): JsonResponse
     {
+        // Get validated data
+        $data = $request->validated();
+        $data['user_id'] = $request->user()->id;
 
-        $password = Hash::make('password');
+        // Check if profile_image exists in the request
+        if ($request->hasFile('profile_image')) {
+            // Store the image and get the file path
+            $filePath = $request->file('profile_image')->store('public/profile_images');
 
-        return response()->json($password, 200);
+            // Save the file path to the data array (only the storage path)
+            $data['profile_image'] = Storage::url($filePath);  // Returns a publicly accessible URL
+        }
+
+        // Create the profile in the database
+        $createProfile = Profile::create($data);
+
+        return $this->responseSuccess('Profile created successfully.', $createProfile);
     }
+
 
     /**
      * Display the specified resource.
