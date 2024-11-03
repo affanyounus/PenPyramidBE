@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    protected $appends = ['profileExists'];
+    protected $appends = ['profile_exists'];
 
     /**
      * The attributes that should be hidden for serialization.

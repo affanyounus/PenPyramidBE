@@ -61,7 +61,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        Auth::login($user);it
 
         return response()->json($user, 201);
     }
